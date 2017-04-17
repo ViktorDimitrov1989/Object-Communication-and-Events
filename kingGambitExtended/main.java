@@ -1,10 +1,9 @@
 package kingGambitExtended;
 
 import kingGambitExtended.commands.CommandExecutor;
-import kingGambitExtended.commands.implementCommands.AttackKingCommand;
 import kingGambitExtended.commands.implementCommands.KillCommand;
 import kingGambitExtended.implementations.Footman;
-import kingGambitExtended.implementations.KingImpl;
+import kingGambitExtended.implementations.King;
 import kingGambitExtended.implementations.RoyalGuard;
 
 import java.io.BufferedReader;
@@ -18,16 +17,16 @@ public class main {
         CommandExecutor executor = new CommandExecutor();
 
         String kingName = reader.readLine();
-        KingImpl king = new KingImpl(kingName);
+        King king = new King(kingName);
 
         String[] royalGuardsNames = reader.readLine().split("\\s+");
         for (String royalGuardsName : royalGuardsNames) {
-            king.registerGuard("royalGuard",royalGuardsName, new RoyalGuard(royalGuardsName));
+            king.addGuard(royalGuardsName, new RoyalGuard(royalGuardsName));
         }
 
         String[] footMenNames = reader.readLine().split("\\s+");
         for (String footMenName : footMenNames) {
-            king.registerGuard("footman",footMenName, new Footman(footMenName));
+            king.addGuard(footMenName, new Footman(footMenName));
         }
 
         String line;
@@ -36,13 +35,12 @@ public class main {
 
             switch (tokens[0].toLowerCase()){
                 case "attack":
-                    executor.executeCommand(new AttackKingCommand(king));
+                    king.notifyGuards();
                     break;
                 case "kill":
-                    executor.executeCommand(new KillCommand(king, tokens[1]));
+                    executor.executeCommand(new KillCommand(king, king.getGuard(tokens[1])));
                     break;
             }
         }
-
     }
 }

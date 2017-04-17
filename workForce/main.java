@@ -1,13 +1,13 @@
 package workForce;
 
-import contracts.EmployeeRepository;
-import contracts.Mediator;
-import models.business.Business;
-import models.employee.Employee;
-import models.employee.EmployeeRepositoryImpl;
-import models.employee.PartTimeEmployee;
-import models.employee.StandartEmployee;
-import models.job.JobImpl;
+import workForce.contracts.EmployeeRepository;
+import workForce.contracts.Mediator;
+import workForce.models.business.Business;
+import workForce.models.employee.Employee;
+import workForce.models.employee.EmployeeRepositoryImpl;
+import workForce.models.employee.PartTimeEmployee;
+import workForce.models.employee.StandartEmployee;
+import workForce.models.job.JobImpl;
 
 import java.io.BufferedReader;
 import java.io.IOException;

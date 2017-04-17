@@ -1,6 +1,6 @@
 package workForce.contracts;
 
-import models.job.JobImpl;
+import workForce.models.job.JobImpl;
 
 public interface Mediator {
 

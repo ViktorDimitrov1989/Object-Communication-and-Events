@@ -39,7 +39,7 @@ public class King extends Hero implements Subject, Attackable{
 
     @Override
     public void takeAttack() {
-        System.out.println(String.format("King %s is under attack!", super.getName()));
+        System.out.println(String.format("IKing %s is under attack!", super.getName()));
         this.notifyObservers();
     }
 }

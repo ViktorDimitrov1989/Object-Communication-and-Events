@@ -1,20 +1,23 @@
 package kingGambitExtended.commands.implementCommands;
 
 import kingGambitExtended.commands.Command;
-import kingGambitExtended.contracts.King;
+import kingGambitExtended.contracts.Attackable;
+import kingGambitExtended.contracts.IKing;
 
 public class KillCommand implements Command{
-    private King king;
-    private String observerName;
+    private IKing king;
+    private Attackable defender;
 
-    public KillCommand(King king, String observerName) {
+    public KillCommand(IKing king, Attackable defender) {
         this.king = king;
-        this.observerName = observerName;
+        this.defender = defender;
     }
 
     @Override
     public void execute() {
-        this.king.takeAttack();
-        this.king.notifyObserver(this.observerName);
+        this.defender.takeAttack();
+        if(this.defender.getHealth() <= 0){
+            this.king.removeGuard(defender.getName());
+        }
     }
 }
