@@ -1,6 +1,6 @@
-package evenImplementation.implementations;
+package eventImplementation.implementations;
 
-import evenImplementation.contracts.NameChangeListener;
+import eventImplementation.contracts.NameChangeListener;
 
 import java.util.ArrayList;
 import java.util.List;

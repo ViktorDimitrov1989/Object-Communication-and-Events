@@ -1,6 +1,6 @@
-package evenImplementation.implementations;
+package eventImplementation.implementations;
 
-import evenImplementation.contracts.NameChangeListener;
+import eventImplementation.contracts.NameChangeListener;
 
 public class Handler implements NameChangeListener{
 

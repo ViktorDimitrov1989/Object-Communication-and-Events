@@ -1,14 +1,14 @@
 package dependencyInversion;
 
 
-import dependencyInversion.contracts.MathStrategy;
+import dependencyInversion.contracts.Strategy;
 import dependencyInversion.strategies.AdditionStrategy;
 import dependencyInversion.strategies.DividingStrategy;
 import dependencyInversion.strategies.MultiplyingStrategy;
 import dependencyInversion.strategies.SubtractionStrategy;
 
 public class PrimitiveCalculator {
-    private MathStrategy strategy;
+    private Strategy strategy;
 
     public PrimitiveCalculator(){
         this.strategy = new AdditionStrategy();

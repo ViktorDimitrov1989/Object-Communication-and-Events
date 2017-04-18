@@ -1,4 +1,4 @@
-package evenImplementation.contracts;
+package eventImplementation.contracts;
 
 
 public interface NameChangeListener {

@@ -1,7 +1,7 @@
-package evenImplementation;
+package eventImplementation;
 
-import evenImplementation.implementations.Dispatcher;
-import evenImplementation.implementations.Handler;
+import eventImplementation.implementations.Dispatcher;
+import eventImplementation.implementations.Handler;
 
 import java.io.BufferedReader;
 import java.io.IOException;
